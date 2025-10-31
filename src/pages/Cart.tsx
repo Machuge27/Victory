@@ -9,7 +9,7 @@ import {
   notificationService,
   CustomerDetails,
 } from "@/lib/notificationService";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity, totalPrice, clearCart } =
@@ -19,6 +19,10 @@ const Cart = () => {
     name: "",
     phone: "",
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleCheckout = async () => {
     if (!customerDetails.name || !customerDetails.phone) {
