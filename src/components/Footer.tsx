@@ -56,8 +56,8 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-gold">Contact Info</h4>
             <ul className="space-y-2 text-sm opacity-80">
-              <li>0725871820</li>
-              <li>0787123634</li>
+              <li>+254725871820</li>
+              <li>+254787123634</li>
               <li>Based Machakos & Nairobi</li>
               <li>Delivery Country Wide</li>
             </ul>

@@ -5,7 +5,7 @@ import { ArrowLeft, ShoppingCart, Check } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useCart } from "@/contexts/CartContext";
 import { ProductCard } from "@/components/ProductCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -14,8 +14,14 @@ const ProductDetail = () => {
   const [selectedSize, setSelectedSize] = useState<string>("");
   const product = products.find((p) => p.id === Number(id));
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   // Get related products (exclude current product)
-  const relatedProducts = products.filter((p) => p.id !== Number(id)).slice(0, 3);
+  const relatedProducts = products
+    .filter((p) => p.id !== Number(id))
+    .slice(0, 3);
 
   if (!product) {
     return (
@@ -42,7 +48,7 @@ const ProductDetail = () => {
       });
       return;
     }
-    
+
     if (product) {
       addToCart(product, selectedSize);
       toast({
@@ -56,7 +62,10 @@ const ProductDetail = () => {
     <main className="min-h-screen py-16">
       <div className="container mx-auto px-4">
         {/* Back Button */}
-        <Link to="/products" className="inline-flex items-center text-muted-foreground hover:text-foreground mb-8 transition-colors">
+        <Link
+          to="/products"
+          className="inline-flex items-center text-muted-foreground hover:text-foreground mb-8 transition-colors"
+        >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Products
         </Link>
@@ -75,9 +84,11 @@ const ProductDetail = () => {
 
           {/* Product Info */}
           <div className="flex flex-col justify-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">{product.name}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              {product.name}
+            </h1>
             <p className="text-3xl font-bold text-gold mb-6">{product.price}</p>
-            
+
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               {product.description}
             </p>
@@ -116,9 +127,9 @@ const ProductDetail = () => {
             </div>
 
             {/* Purchase Button */}
-            <Button 
-              variant="gold" 
-              size="lg" 
+            <Button
+              variant="gold"
+              size="lg"
               className="w-full md:w-auto text-lg py-6 px-12"
               onClick={handleAddToCart}
             >
@@ -130,7 +141,9 @@ const ProductDetail = () => {
 
         {/* Related Products */}
         <div className="mt-24">
-          <h2 className="text-3xl font-bold mb-8 animate-fade-in">You May Also Like</h2>
+          <h2 className="text-3xl font-bold mb-8 animate-fade-in">
+            You May Also Like
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {relatedProducts.map((relatedProduct) => (
               <ProductCard key={relatedProduct.id} {...relatedProduct} />
