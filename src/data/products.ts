@@ -12,7 +12,7 @@ import calvin1 from "@/assets/products/calvin1.jpeg";
 import chelsea1 from "@/assets/products/chelsea1.jpeg";
 
 // Cracks Collection
-import cracks1 from "@/assets/products/cracks1.jpeg";
+
 import cracks2 from "@/assets/products/cracks2.jpeg";
 import cracks3 from "@/assets/products/cracks3.jpeg";
 import cracks4 from "@/assets/products/cracks4.jpeg";
@@ -169,19 +169,6 @@ export const products: Product[] = [
   },
 
   // Cracks Collection
-  {
-    id: 6,
-    name: "Cracks Urban Style",
-    price: "KSh 3, 200",
-    image: cracks1,
-    description: "Urban style sneakers with unique crack pattern design.",
-    features: [
-      "Unique design",
-      "Comfortable fit",
-      "Urban style",
-      "Quality materials",
-    ],
-  },
   {
     id: 7,
     name: "Cracks Street Edition",
