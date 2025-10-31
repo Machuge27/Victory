@@ -42,7 +42,7 @@ import oxford1 from "@/assets/products/oxford1.jpeg";
 // Paris Collection
 import paris1 from "@/assets/products/paris1.jpeg";
 import paris2 from "@/assets/products/paris2.jpeg";
-
+import paris3 from "@/assets/products/paris3.jpeg";
 import paris4 from "@/assets/products/paris4.jpeg";
 
 // Philipp Collection
@@ -80,7 +80,7 @@ import terrex5 from "@/assets/products/terrex5.jpeg";
 import vans from "@/assets/products/vans.jpeg";
 
 // Wellington Boots
-import wellingtonBoots from "@/assets/products/wellington boots.jpeg";
+import wellingtonBoots from "@/assets/products/wellington.jpeg";
 
 // Winter Collection
 import winter1 from "@/assets/products/winter1.jpeg";
@@ -99,7 +99,7 @@ export const products: Product[] = [
   {
     id: 1,
     name: "Air Athletic Runner",
-    price: "KSh 18,500",
+    price: "KSh 2,800",
     image: air1,
     description: "Premium athletic runners designed for performance and style.",
     features: [
@@ -114,7 +114,7 @@ export const products: Product[] = [
   {
     id: 2,
     name: "Classic Brogue Oxford",
-    price: "KSh 22,000",
+    price: "KSh 1,800",
     image: brogue1,
     description: "Elegant brogue oxfords perfect for formal occasions.",
     features: [
@@ -157,7 +157,7 @@ export const products: Product[] = [
   {
     id: 5,
     name: "Chelsea Boot Classic",
-    price: "KSh 24,500",
+    price: "KSh 4,000",
     image: chelsea1,
     description: "Timeless Chelsea boots for sophisticated style.",
     features: [
@@ -172,7 +172,7 @@ export const products: Product[] = [
   {
     id: 6,
     name: "Cracks Urban Style",
-    price: "KSh 15,800",
+    price: "KSh 3, 200",
     image: cracks1,
     description: "Urban style sneakers with unique crack pattern design.",
     features: [
@@ -185,7 +185,7 @@ export const products: Product[] = [
   {
     id: 7,
     name: "Cracks Street Edition",
-    price: "KSh 16,200",
+    price: "KSh 3, 200",
     image: cracks2,
     description: "Street edition with distinctive crack pattern styling.",
     features: [
@@ -198,7 +198,7 @@ export const products: Product[] = [
   {
     id: 8,
     name: "Cracks Premium",
-    price: "KSh 17,500",
+    price: "KSh 2, 300",
     image: cracks3,
     description: "Premium version of the popular Cracks collection.",
     features: [
@@ -211,7 +211,7 @@ export const products: Product[] = [
   {
     id: 9,
     name: "Cracks Sport",
-    price: "KSh 16,800",
+    price: "KSh 2, 300",
     image: cracks4,
     description: "Sport variant with crack pattern and athletic features.",
     features: [
@@ -224,7 +224,7 @@ export const products: Product[] = [
   {
     id: 10,
     name: "Cracks Elite",
-    price: "KSh 18,200",
+    price: "KSh 2, 300",
     image: cracks6,
     description: "Elite edition with advanced crack pattern design.",
     features: [
@@ -238,7 +238,7 @@ export const products: Product[] = [
   {
     id: 12,
     name: "Cracks Signature",
-    price: "KSh 19,200",
+    price: "KSh 2, 300",
     image: cracks8,
     description: "Signature edition featuring the finest crack pattern design.",
     features: [
@@ -253,7 +253,7 @@ export const products: Product[] = [
   {
     id: 13,
     name: "Doll Elegant Heel",
-    price: "KSh 21,500",
+    price: "KSh 1,200",
     image: doll1,
     description: "Elegant heeled shoes perfect for special occasions.",
     features: [
@@ -283,7 +283,7 @@ export const products: Product[] = [
   {
     id: 15,
     name: "Ladies Comfort Sneaker",
-    price: "KSh 16,800",
+    price: "KSh 1, 600",
     image: ladies1,
     description: "Comfortable sneakers designed specifically for women.",
     features: [
@@ -298,7 +298,7 @@ export const products: Product[] = [
   {
     id: 16,
     name: "Leather Boot Premium",
-    price: "KSh 26,500",
+    price: "KSh 3,000",
     image: lboots1,
     description: "Premium leather boots for durability and style.",
     features: [
@@ -313,7 +313,7 @@ export const products: Product[] = [
   {
     id: 17,
     name: "Nike Shox Classic",
-    price: "KSh 23,500",
+    price: "KSh 2,800",
     image: nikeshox,
     description: "Classic Nike Shox with signature cushioning technology.",
     features: [
@@ -326,7 +326,7 @@ export const products: Product[] = [
   {
     id: 18,
     name: "Nike Shox Elite",
-    price: "KSh 24,800",
+    price: "KSh 2,800",
     image: nikeshox2,
     description: "Elite version of Nike Shox with enhanced features.",
     features: [
@@ -341,7 +341,7 @@ export const products: Product[] = [
   {
     id: 19,
     name: "Oxford Formal",
-    price: "KSh 21,200",
+    price: "KSh 4,500",
     image: oxford1,
     description: "Classic Oxford shoes for formal and business wear.",
     features: [
@@ -356,7 +356,7 @@ export const products: Product[] = [
   {
     id: 20,
     name: "Paris Elegance",
-    price: "KSh 20,500",
+    price: "KSh 3, 300",
     image: paris1,
     description: "Elegant Parisian-inspired footwear for sophisticated style.",
     features: [
@@ -369,7 +369,7 @@ export const products: Product[] = [
   {
     id: 21,
     name: "Paris Chic",
-    price: "KSh 21,800",
+    price: "KSh 3, 300",
     image: paris2,
     description: "Chic Parisian style shoes for the fashion-forward.",
     features: [
@@ -379,11 +379,23 @@ export const products: Product[] = [
       "Stylish comfort",
     ],
   },
-
+  {
+    id: 22,
+    name: "Paris Luxury",
+    price: "KSh 3, 300",
+    image: paris3,
+    description: "Luxury edition of the Paris collection.",
+    features: [
+      "Luxury materials",
+      "Premium design",
+      "Parisian elegance",
+      "Exceptional quality",
+    ],
+  },
   {
     id: 23,
     name: "Paris Signature",
-    price: "KSh 24,500",
+    price: "KSh 3, 300",
     image: paris4,
     description: "Signature Paris collection with exclusive design.",
     features: [
@@ -428,7 +440,7 @@ export const products: Product[] = [
   {
     id: 26,
     name: "Classic White Sneaker",
-    price: "KSh 16,900",
+    price: "KSh 1, 200",
     image: sneakers2,
     description: "Timeless white sneakers for everyday wear.",
     features: [
@@ -441,7 +453,7 @@ export const products: Product[] = [
   {
     id: 27,
     name: "Urban Casual Sneaker",
-    price: "KSh 15,600",
+    price: "KSh 1, 200",
     image: sneakers3,
     description: "Urban casual sneakers for modern lifestyle.",
     features: [
@@ -454,7 +466,7 @@ export const products: Product[] = [
   {
     id: 28,
     name: "Sport Sneaker Pro",
-    price: "KSh 17,800",
+    price: "KSh 1, 200",
     image: sneakers4,
     description: "Professional sport sneakers for active individuals.",
     features: [
@@ -536,7 +548,7 @@ export const products: Product[] = [
   {
     id: 35,
     name: "Stacked Heel Fashion",
-    price: "KSh 19,800",
+    price: "KSh 1, 600",
     image: stackedH,
     description:
       "Fashionable stacked heel shoes for style-conscious individuals.",
@@ -552,7 +564,7 @@ export const products: Product[] = [
   {
     id: 36,
     name: "Taiyu Comfort",
-    price: "KSh 17,500",
+    price: "KSh 2, 000",
     image: taiyu,
     description: "Comfortable shoes from the Taiyu collection.",
     features: [
@@ -567,7 +579,7 @@ export const products: Product[] = [
   {
     id: 37,
     name: "Terrex Outdoor Basic",
-    price: "KSh 18,800",
+    price: "KSh 3, 300",
     image: terrex1,
     description: "Basic outdoor shoes from the Terrex collection.",
     features: [
@@ -580,7 +592,7 @@ export const products: Product[] = [
   {
     id: 38,
     name: "Terrex Hiking Pro",
-    price: "KSh 21,200",
+    price: "KSh 3, 300",
     image: terrex2,
     description: "Professional hiking shoes with advanced features.",
     features: [
@@ -593,7 +605,7 @@ export const products: Product[] = [
   {
     id: 39,
     name: "Terrex Adventure",
-    price: "KSh 19,500",
+    price: "KSh 3, 300",
     image: terrex3,
     description: "Adventure-ready shoes for outdoor enthusiasts.",
     features: [
@@ -606,7 +618,7 @@ export const products: Product[] = [
   {
     id: 40,
     name: "Terrex Explorer",
-    price: "KSh 20,800",
+    price: "KSh 3, 300",
     image: terrex4,
     description: "Explorer edition for serious outdoor activities.",
     features: [
@@ -619,7 +631,7 @@ export const products: Product[] = [
   {
     id: 41,
     name: "Terrex Summit",
-    price: "KSh 23,500",
+    price: "KSh 3, 300",
     image: terrex5,
     description: "Summit edition for extreme outdoor conditions.",
     features: [
@@ -634,7 +646,7 @@ export const products: Product[] = [
   {
     id: 42,
     name: "Classic Vans Style",
-    price: "KSh 16,200",
+    price: "KSh 1,500",
     image: vans,
     description: "Classic Vans-style sneakers with timeless appeal.",
     features: [
@@ -649,7 +661,7 @@ export const products: Product[] = [
   {
     id: 43,
     name: "Wellington Rain Boots",
-    price: "KSh 12,500",
+    price: "KSh 1,300",
     image: wellingtonBoots,
     description: "Waterproof Wellington boots for wet conditions.",
     features: [
@@ -664,7 +676,7 @@ export const products: Product[] = [
   {
     id: 44,
     name: "Winter Warm Boot",
-    price: "KSh 24,800",
+    price: "KSh 3,000",
     image: winter1,
     description: "Warm winter boots for cold weather protection.",
     features: [
