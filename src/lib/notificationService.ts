@@ -154,30 +154,31 @@ const generateEmailTemplate = (orderData: OrderNotification): string => {
   `;
 };
 
-// Plain text template for WhatsApp
+// WhatsApp message template (from customer's perspective)
 const generateWhatsAppMessage = (orderData: OrderNotification): string => {
-  const { customer, items, totalPrice, orderNumber } = orderData;
-  const orderNum = orderNumber || `ORD-${Date.now()}`;
-  
-  const itemsList = items.map((item, index) => 
-    `${index + 1}. ${item.name}\n   Size: ${item.selectedSize} | Qty: ${item.quantity} | KSh ${item.price.toLocaleString()}`
-  ).join('\n\n');
+  const { customer, items, totalPrice } = orderData;
 
-  return `🎉 *NEW ORDER RECEIVED!*
+  const itemsList = items
+    .map(
+      (item, index) =>
+        `${index + 1}. ${item.name} (Size: ${item.selectedSize}) - Qty: ${
+          item.quantity
+        }`
+    )
+    .join("\n");
 
-📋 *Order #${orderNum}*
-📅 ${new Date().toLocaleString('en-KE')}
+  return `Hi! I'm interested in purchasing the following items from Victory Shoe Collection:
 
-👤 *Customer Details:*
+*My Details:*
 Name: ${customer.name}
 Phone: ${customer.phone}
 
-🛍️ *Order Items:*
+*Items I'm interested in:*
 ${itemsList}
 
-💰 *Total Amount: KSh ${totalPrice.toLocaleString()}*
+*Total Amount: KSh ${totalPrice.toLocaleString()}*
 
-⚠️ Please contact the customer to confirm and arrange delivery.`;
+Please let me know about availability and delivery arrangements. Thank you!`;
 };
 
 export const notificationService = {
@@ -200,10 +201,10 @@ export const notificationService = {
 
       return {
         email: emailSent,
-        whatsapp: whatsappSent
+        whatsapp: whatsappSent,
       };
     } catch (error) {
-      console.error('Error sending notifications:', error);
+      console.error("Error sending notifications:", error);
       throw error;
     }
   },
@@ -211,7 +212,9 @@ export const notificationService = {
   /**
    * Send WhatsApp notification
    */
-  async sendWhatsAppNotification(orderData: OrderNotification): Promise<boolean> {
+  async sendWhatsAppNotification(
+    orderData: OrderNotification
+  ): Promise<boolean> {
     try {
       // const ownerPhone = "254725871820";
       const ownerPhone = "254716260730";
@@ -226,51 +229,54 @@ export const notificationService = {
       console.log("WhatsApp notification sent successfully");
       return true;
     } catch (error) {
-      console.error('Error sending WhatsApp notification:', error);
+      console.error("Error sending WhatsApp notification:", error);
       return false;
     }
   },
 
   /**
-   * Send email notification
-   * Uses mailto as fallback - in production, integrate with email service
-   * (e.g., SendGrid, AWS SES, Resend, etc.)
+   * Send email notification using the provided API endpoint
    */
   async sendEmailNotification(orderData: OrderNotification): Promise<boolean> {
     try {
-      // const adminEmail = "nj239332@gmail.com";
-      const adminEmail = "mutaihillary391@gmail.com";
-      const subject = `New Order #${orderData.orderNumber || Date.now()} - Victory Shoe Collection`;
-      
+      const adminEmail = "nj239332@gmail.com";
+      const subject = `Key - New Order #${
+        orderData.orderNumber || Date.now()
+      } - Victory Shoe Collection`;
+
       // Generate HTML email template
       const htmlBody = generateEmailTemplate(orderData);
-      
-      // For production, you would call an email API here:
-      // await fetch('/api/send-email', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({
-      //     to: adminEmail,
-      //     subject: subject,
-      //     html: htmlBody
-      //   })
-      // });
 
-      // Fallback: Use mailto (opens email client)
-      const plainTextBody = generateWhatsAppMessage(orderData);
-      const mailtoUrl = `mailto:${adminEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(plainTextBody)}`;
-      
-      window.open(mailtoUrl, '_blank');
-      
-      console.log('Email notification prepared:', {
-        to: adminEmail,
-        subject,
-        htmlPreview: htmlBody.substring(0, 100) + '...'
-      });
-      
-      return true;
+      const data = {
+        email: adminEmail,
+        subject: subject,
+        body: htmlBody,
+        is_html: true,
+      };
+
+      const response = await fetch(
+        "https://mutaiservices.pythonanywhere.com/auth/emailer/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (response.ok) {
+        console.log("Email notification sent successfully");
+        return true;
+      } else {
+        console.error(
+          "Failed to send email notification:",
+          response.statusText
+        );
+        return false;
+      }
     } catch (error) {
-      console.error('Error sending email notification:', error);
+      console.error("Error sending email notification:", error);
       return false;
     }
   },
@@ -280,5 +286,5 @@ export const notificationService = {
    */
   getEmailTemplate(orderData: OrderNotification): string {
     return generateEmailTemplate(orderData);
-  }
+  },
 };
