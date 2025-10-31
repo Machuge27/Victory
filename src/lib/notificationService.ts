@@ -108,7 +108,8 @@ export const notificationService = {
     orderData: OrderNotification
   ): Promise<boolean> {
     try {
-      const ownerPhone = "254716260730";
+      // const ownerPhone = "254716260730";
+      const ownerPhone = "254725871820";
       const message = generateWhatsAppMessage(orderData);
       const whatsappUrl = `https://wa.me/${ownerPhone}?text=${encodeURIComponent(
         message
@@ -130,7 +131,7 @@ export const notificationService = {
    */
   async sendEmailNotification(orderData: OrderNotification): Promise<boolean> {
     try {
-      const adminEmail = "johngachuru803@gmail.com";
+      const adminEmail = "nj239332@gmail.com";
       const subject = `New Order #${
         orderData.orderNumber || Date.now()
       } - Victory Shoe Collection`;

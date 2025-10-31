@@ -12,7 +12,7 @@ const getRandomProducts = (count: number) => {
 };
 
 const Index = () => {
-  const whatsappNumber = "+254725871820";
+  const whatsappNumber = "254725871820";
   const whatsappMessage = "Hi! I'm interested in your shoe collection.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     whatsappMessage
