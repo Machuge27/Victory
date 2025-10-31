@@ -213,14 +213,17 @@ export const notificationService = {
    */
   async sendWhatsAppNotification(orderData: OrderNotification): Promise<boolean> {
     try {
-      const ownerPhone = "254725871820"; // Kenya format (remove leading 0, add 254)
+      // const ownerPhone = "254725871820";
+      const ownerPhone = "254716260730";
       const message = generateWhatsAppMessage(orderData);
-      const whatsappUrl = `https://wa.me/${ownerPhone}?text=${encodeURIComponent(message)}`;
-      
+      const whatsappUrl = `https://wa.me/${ownerPhone}?text=${encodeURIComponent(
+        message
+      )}`;
+
       // Open WhatsApp in new tab
-      window.open(whatsappUrl, '_blank');
-      
-      console.log('WhatsApp notification sent successfully');
+      window.open(whatsappUrl, "_blank");
+
+      console.log("WhatsApp notification sent successfully");
       return true;
     } catch (error) {
       console.error('Error sending WhatsApp notification:', error);
