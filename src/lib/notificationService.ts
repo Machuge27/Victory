@@ -130,7 +130,7 @@ export const notificationService = {
    */
   async sendEmailNotification(orderData: OrderNotification): Promise<boolean> {
     try {
-      const adminEmail = "mutaihillary391@gmail.com";
+      const adminEmail = "johngachuru803@gmail.com";
       const subject = `New Order #${
         orderData.orderNumber || Date.now()
       } - Victory Shoe Collection`;
