@@ -18,10 +18,14 @@ const ProductDetail = () => {
     window.scrollTo(0, 0);
   }, [id]);
 
-  // Get related products (exclude current product)
-  const relatedProducts = products
-    .filter((p) => p.id !== Number(id))
-    .slice(0, 3);
+  // Get random related products (exclude current product)
+  const getRandomProducts = (count: number) => {
+    const availableProducts = products.filter((p) => p.id !== Number(id));
+    const shuffled = [...availableProducts].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
+
+  const relatedProducts = getRandomProducts(3);
 
   if (!product) {
     return (
