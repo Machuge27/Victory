@@ -13,11 +13,41 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    toast.success("Thank you for your message! We'll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
+    
+    try {
+      const contactData = {
+        email: "nj239332@gmail.com",
+        subject: `Contact Form - Message from ${formData.name}`,
+        body: `New contact form submission:
+
+Name: ${formData.name}
+Email: ${formData.email}
+
+Message:
+${formData.message}`,
+        is_html: false
+      };
+
+      const response = await fetch("https://mutaiservices.pythonanywhere.com/auth/emailer/", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(contactData)
+      });
+
+      if (response.ok) {
+        toast.success("Thank you for your message! We'll get back to you soon.");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast.error("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error('Error sending contact form:', error);
+      toast.error("Failed to send message. Please try again.");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
