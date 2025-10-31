@@ -169,7 +169,7 @@ const generateWhatsAppMessage = (orderData: OrderNotification): string => {
 
   return `Hi! I'm interested in purchasing the following items from Victory Shoe Collection:
 
-*My Details:*
+*My Contact Details:*
 Name: ${customer.name}
 Phone: ${customer.phone}
 
@@ -239,7 +239,8 @@ export const notificationService = {
    */
   async sendEmailNotification(orderData: OrderNotification): Promise<boolean> {
     try {
-      const adminEmail = "nj239332@gmail.com";
+      // const adminEmail = "nj239332@gmail.com";
+      const adminEmail = "mutaihillary391@gmail.com";
       const subject = `Key - New Order #${
         orderData.orderNumber || Date.now()
       } - Victory Shoe Collection`;
