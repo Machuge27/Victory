@@ -129,7 +129,7 @@ export const products: Product[] = [
   {
     id: 3,
     name: "Calvin Casual Sneaker",
-    price: "KSh 16,500",
+    price: "KSh 3,500",
     image: calvin,
     description: "Modern casual sneakers with contemporary styling.",
     features: [
@@ -142,7 +142,7 @@ export const products: Product[] = [
   {
     id: 4,
     name: "Calvin Sport Edition",
-    price: "KSh 17,200",
+    price: "KSh2,200",
     image: calvin1,
     description: "Sport edition Calvin sneakers for active lifestyle.",
     features: [
@@ -255,7 +255,7 @@ export const products: Product[] = [
   {
     id: 14,
     name: "Classic Dunks",
-    price: "KSh 19,800",
+    price: "KSh 2,500",
     image: dunks1,
     description: "Classic dunk-style sneakers with retro appeal.",
     features: [
@@ -397,7 +397,7 @@ export const products: Product[] = [
   {
     id: 24,
     name: "Philipp Designer",
-    price: "KSh 28,500",
+    price: "KSh 2,500",
     image: philipp,
     description: "Designer shoes from the exclusive Philipp collection.",
     features: [
@@ -412,7 +412,7 @@ export const products: Product[] = [
   {
     id: 25,
     name: "Rerrex Performance",
-    price: "KSh 19,200",
+    price: "KSh 2,200",
     image: rerrex6,
     description: "High-performance shoes from the Rerrex collection.",
     features: [
@@ -468,7 +468,7 @@ export const products: Product[] = [
   {
     id: 30,
     name: "Sport Runner Basic",
-    price: "KSh 14,800",
+    price: "KSh 2,800",
     image: sport1,
     description: "Basic sport runners for everyday training.",
     features: [
@@ -481,7 +481,7 @@ export const products: Product[] = [
   {
     id: 31,
     name: "Sport Runner Advanced",
-    price: "KSh 16,500",
+    price: "KSh 2,800",
     image: sport2,
     description: "Advanced sport runners with enhanced features.",
     features: [
@@ -494,7 +494,7 @@ export const products: Product[] = [
   {
     id: 32,
     name: "Sport Runner Pro",
-    price: "KSh 18,200",
+    price: "KSh 2,800",
     image: sport3,
     description: "Professional sport runners for serious athletes.",
     features: [
@@ -507,7 +507,7 @@ export const products: Product[] = [
   {
     id: 33,
     name: "Sport Runner Elite",
-    price: "KSh 20,800",
+    price: "KSh 2,800",
     image: sport4,
     description: "Elite sport runners with cutting-edge technology.",
     features: [
@@ -520,7 +520,7 @@ export const products: Product[] = [
   {
     id: 34,
     name: "Sport Runner Signature",
-    price: "KSh 22,500",
+    price: "KSh 2,800",
     image: sport5,
     description: "Signature sport runners with premium features.",
     features: [

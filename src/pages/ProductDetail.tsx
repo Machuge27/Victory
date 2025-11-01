@@ -114,19 +114,21 @@ const ProductDetail = () => {
             <div className="mb-8">
               <h2 className="text-xl font-semibold mb-4">Select Size</h2>
               <div className="flex flex-wrap gap-3">
-                {["7", "8", "9", "10", "11", "12"].map((size) => (
-                  <button
-                    key={size}
-                    onClick={() => setSelectedSize(size)}
-                    className={`px-6 py-3 border-2 rounded-md transition-all duration-300 font-medium ${
-                      selectedSize === size
-                        ? "border-gold bg-gold/10 text-gold"
-                        : "border-border hover:border-gold hover:text-gold"
-                    }`}
-                  >
-                    {size}
-                  </button>
-                ))}
+                {["3", "4", "5", "6", "7", "8", "9", "10", "11", "12"].map(
+                  (size) => (
+                    <button
+                      key={size}
+                      onClick={() => setSelectedSize(size)}
+                      className={`px-6 py-3 border-2 rounded-md transition-all duration-300 font-medium ${
+                        selectedSize === size
+                          ? "border-gold bg-gold/10 text-gold"
+                          : "border-border hover:border-gold hover:text-gold"
+                      }`}
+                    >
+                      {size}
+                    </button>
+                  )
+                )}
               </div>
             </div>
 
